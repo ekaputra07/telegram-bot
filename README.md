@@ -1,12 +1,10 @@
 # telegram-bot
 
-A boilerplace code to create your own Telegram bot using Elixir.
-
-This project is just a plain Elixir app. A couple of helper scripts available under `scripts/` to ease development on your local machine.
+An Elixir app to create your own Telegram bot.
 
 ### 👉 Development
 
-Development is easy thanks to Docker and Docker compose, they allows us to work on Elixir app without having Elixir installed on our machine.
+A couple of helper scripts available under `scripts/` to ease development on your local machine.
 
 Working on the bot locally:
 
