@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev
+    entrypoint: [ "/bin/bash", "-c", "--" ]
+    env_file:
+      - .env
+    ports:
+      - 4000:4000
+    volumes:
+      - ./:/app
+
+  prod:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.prod
+    env_file:
+      - .env
+    ports:
+      - 4000:4000
