@@ -1,5 +1,3 @@
 defmodule App do
-  @moduledoc """
-  Documentation for `App`.
-  """
+  @moduledoc false
 end

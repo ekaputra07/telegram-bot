@@ -27,3 +27,4 @@ app-*.tar
 
 .env
 .DS_Store
+fly.toml
