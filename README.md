@@ -48,4 +48,4 @@ If everything works as expected we'll have our bot up and running on fly.io and 
 
 ### 👉 Demo bot
 
-Open this link [t.me/ElixirDemoBot](t.me/ElixirDemoBot) and send it `/ping` message and it will reply with `pong!` or send any message (unknown commands) and see the replies.
+Open this link [t.me/ElixirDemoBot](https://t.me/ElixirDemoBot) and send it `/ping` message and it will reply with `pong!` or send any message (unknown commands) and see the replies.
