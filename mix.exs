@@ -23,7 +23,8 @@ defmodule App.MixProject do
   defp deps do
     [
       {:telegram, github: "visciang/telegram", tag: "0.22.4"},
-      {:hackney, "~> 1.18"}
+      {:hackney, "~> 1.18"},
+      {:mox, "~> 1.0", only: :test}
     ]
   end
 end

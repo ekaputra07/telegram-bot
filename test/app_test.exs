@@ -2,7 +2,7 @@ defmodule AppTest do
   use ExUnit.Case
   doctest App
 
-  test "greets the world" do
-    assert App.hello() == :world
+  test "telegram_api" do
+    assert App.telegram_api() == TelegramApiMock
   end
 end

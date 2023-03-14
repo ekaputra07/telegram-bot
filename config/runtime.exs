@@ -1,5 +1,7 @@
 import Config
 
+# Runtime specific config
+
 config :app,
   host: System.get_env("BOT_HOST"),
   bot_token: System.get_env("BOT_TOKEN"),

@@ -2,14 +2,12 @@ defmodule Bot do
   @moduledoc """
   An example of Telegram bot command handlers.
   """
-
   use Telegram.Bot
-  require Logger
 
-  @impl Telegram.Bot
   @doc """
   Handle update type `message`, other types are ignored.
   """
+  @impl true
   def handle_update(
         %{
           "message" => %{
@@ -23,14 +21,15 @@ defmodule Bot do
     handle_chat(text, chat, message_id, token)
   end
 
-  @impl Telegram.Bot
-  def handle_update(message, _token) do
-    Logger.debug(message)
+  @impl true
+  def handle_update(_message, _token) do
+    # ignore unknown updates
+    :ok
   end
 
   # helper function to reply a message
   defp reply(token, chat_id, message_id, message) do
-    Telegram.Api.request(token, "sendMessage",
+    App.telegram_api().request(token, "sendMessage",
       chat_id: chat_id,
       reply_to_message_id: message_id,
       text: message

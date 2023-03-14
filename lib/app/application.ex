@@ -17,10 +17,12 @@ defmodule App.Application do
       max_bot_concurrency: Application.fetch_env!(:app, :max_bot_concurrency)
     ]
 
-    children = [
-      # add our bot under supervision tree.
-      {Telegram.Webhook, config: webhook_config, bots: [{Bot, bot_config}]}
-    ]
+    # add our bot under supervision tree except on test environment.
+    children =
+      case Mix.env() do
+        :test -> []
+        _ -> [{Telegram.Webhook, config: webhook_config, bots: [{Bot, bot_config}]}]
+      end
 
     opts = [strategy: :one_for_one, name: App.Supervisor]
     Supervisor.start_link(children, opts)
