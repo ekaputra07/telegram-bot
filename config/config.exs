@@ -5,6 +5,11 @@ config :logger, :console, metadata: [:bot, :chat_id]
 config :tesla,
   adapter: {Tesla.Adapter.Hackney, [recv_timeout: 40_000]}
 
-# Import environment specific config. This must remain at the bottom
-# of this file so it overrides the configuration defined above.
-import_config "#{config_env()}.exs"
+config :app,
+  start_bot: true
+
+# Don't start Bot process on :test env
+if config_env() == :test do
+  config :app,
+    start_bot: false
+end
