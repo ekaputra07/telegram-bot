@@ -15,8 +15,8 @@ jobs:
       - uses: actions/checkout@v3
       - run: echo "$FLY_TOML" > fly.toml
         env:
-          FLY_TOML: ${{ secrets.FLY_TOML }}
+          FLY_TOML: ${{ vars.FLY_TOML }}
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only
+      - run: flyctl deploy --remote-only --ha=false
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

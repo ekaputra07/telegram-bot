@@ -22,8 +22,9 @@ defmodule App.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:telegram, github: "visciang/telegram", tag: "0.22.4"},
+      {:telegram, github: "visciang/telegram", tag: "1.1.1"},
       {:hackney, "~> 1.18"},
+      {:plug_cowboy, "~> 2.5"},
       {:mox, "~> 1.0", only: :test}
     ]
   end
